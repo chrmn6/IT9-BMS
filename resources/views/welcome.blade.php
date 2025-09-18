@@ -1557,7 +1557,7 @@
             <div class="flex-1 p-6 pb-12 lg:p-18 flex flex-col justify-center text-[#1b1b18] dark:text-[#EDEDEC]">
                 <h1 class="mb-1 font-medium"
                     style="font-size: 3rem; line-height: 1; text-transform: uppercase; font-weight: bold;">
-                    Welcome to Barangay Matina Gravahan System
+                    Welcome to Barangay Matina Gravahan
                 </h1>
                 <p class="mt-2 text-[#706f6c] dark:text-[#A1A09A] font-size: 1rem;">
                     Simplifying barangay operations for a <br> more connected and efficient community.
