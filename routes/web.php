@@ -1,20 +1,23 @@
-<?php
-
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+Route::get('/activities', function () {
+    return view('activities');
+})->name('activities');
 
-require __DIR__.'/auth.php';
+Route::get('/announcement', function () {
+    return view('announcement');
+})->name('announcement');
+
+Route::get('/services', function () {
+    return view('services');
+})->name('services');
+
+Route::get('/service-request', function () {
+    return view('service-request');
+})->name('service-request');
+
+Route::get('/emergency', function () {
+    return view('emergency');
+})->name('emergency');
