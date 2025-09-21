@@ -33,7 +33,7 @@
                     </x-nav-link>
 
                     <x-nav-link :href="url('/emergency')" :active="request()->is('emergency')">
-                        {{ __('Emergency Contact Info') }}
+                        {{ __('Contact Info') }}
                     </x-nav-link>
                 </div>
             </div>
