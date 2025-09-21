@@ -1,13 +1,13 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-// 👇 Public route: Welcome page (always visible)
-Route::get('/', function () {
-    return view('welcome'); // <- your welcome.blade.php
-})->name('welcome');
 
-// 👇 Protected routes (only visible after login/register)
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('userdb.dashboard');
@@ -34,5 +34,11 @@ Route::middleware(['auth'])->group(function () {
     })->name('emergency');
 });
 
-// 👇 This includes Breeze’s auth routes (login, register, logout, etc.)
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+
 require __DIR__.'/auth.php';
