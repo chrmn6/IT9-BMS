@@ -25,13 +25,17 @@ Route::middleware(['auth'])->group(function () {
         return view('userdb.services');
     })->name('services');
 
-    Route::get('/service-request', function () {
-        return view('userdb.service-request');
-    })->name('service-request');
-
     Route::get('/emergency', function () {
         return view('userdb.emergency');
     })->name('emergency');
+
+    Route::get('/clearance', function () {
+        return view('userdb.clearance');
+    })->name('clearance');
+
+    Route::get('/blotter', function () {
+        return view('userdb.blotter');
+    })->name('blotter');
 });
 
 Route::middleware('auth')->group(function () {
